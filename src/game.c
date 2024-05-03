@@ -14,7 +14,7 @@ static PlaydateAPI *pd = NULL;
 void setup(PlaydateAPI *p) {
 	pd = p;
 
-	pd->display->setRefreshRate(60);
+	pd->display->setRefreshRate(50);
 }
 
 int update(void *ud) {
