@@ -24,20 +24,19 @@ endif()
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release")
 set(CMAKE_XCODE_GENERATE_SCHEME TRUE)
 
-# Game Name Customization
+# Game Name - edit this to change the name of the output PDX
 set(PLAYDATE_GAME_NAME PlaydateTemplate)
-set(PLAYDATE_GAME_DEVICE PlaydateTemplate_DEVICE)
 
 project(${PLAYDATE_GAME_NAME} C ASM)
 
-if (TOOLCHAIN STREQUAL "armgcc")
-	add_executable(${PLAYDATE_GAME_DEVICE} src/main.c)
-else()
-	file(GLOB SRC
-		"src/**/*.c"
-		"src/*.c"
-	)
+file(GLOB SRC
+	"src/**/*.c"
+	"src/*.c"
+)
 
+if (TOOLCHAIN STREQUAL "armgcc")
+	add_executable(${PLAYDATE_GAME_NAME}_DEVICE ${SRC})
+else()
 	add_library(${PLAYDATE_GAME_NAME} SHARED ${SRC})
 endif()
 
