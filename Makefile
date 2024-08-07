@@ -35,3 +35,7 @@ ULIBDIR =
 ULIBS =
 
 include $(SDK)/C_API/buildsupport/common.mk
+
+run: all
+	$(info Running built PDX in Simulator)
+	$(SDK)/bin/PlaydateSimulator $(PRODUCT)
