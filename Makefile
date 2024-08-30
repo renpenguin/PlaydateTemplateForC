@@ -22,8 +22,9 @@ UINCDIR =
 # List user asm files
 UASRC =
 
-# List all user C define here, like -D_DEBUG=1
-UDEFS =
+# List all user C define here, like -D_DEBUG
+# These will apply to both the simulator and device
+USER_DEFS =
 
 # Define ASM defines here
 UADEFS =
@@ -33,6 +34,9 @@ ULIBDIR =
 
 # List all user libraries here
 ULIBS =
+
+UDEFS = $(USER_DEFS) -fsingle-precision-constant
+override GCCFLAGS := $(USER_DEFS) -g
 
 include $(SDK)/C_API/buildsupport/common.mk
 

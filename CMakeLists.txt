@@ -35,6 +35,7 @@ file(GLOB SRC
 )
 
 if (TOOLCHAIN STREQUAL "armgcc")
+	target_compile_options(${PLAYDATE_GAME_DEVICE} PUBLIC -fsingle-precision-constant)
 	add_executable(${PLAYDATE_GAME_NAME}_DEVICE ${SRC})
 else()
 	add_library(${PLAYDATE_GAME_NAME} SHARED ${SRC})
