@@ -34,9 +34,10 @@ file(GLOB SRC
 	"src/*.c"
 )
 
+set(PLAYDATE_GAME_DEVICE ${PLAYDATE_GAME_NAME}_DEVICE)
 if (TOOLCHAIN STREQUAL "armgcc")
 	target_compile_options(${PLAYDATE_GAME_DEVICE} PUBLIC -fsingle-precision-constant)
-	add_executable(${PLAYDATE_GAME_NAME}_DEVICE ${SRC})
+	add_executable($(PLAYDATE_GAME_DEVICE) ${SRC})
 else()
 	add_library(${PLAYDATE_GAME_NAME} SHARED ${SRC})
 endif()
