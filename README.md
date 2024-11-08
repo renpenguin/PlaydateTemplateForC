@@ -4,4 +4,4 @@ A template for pure C games (just as the founding fathers intended) for the [Pla
 
 This template automatically grabs all the c files in the src directory (and all sub-directories) so you dont have to manually add them to the Makefile. The setup stuff used by all playdate c projects is kept in `main.c`, so you can focus on making your game in `game.c` and any included module files.
 
-I used this as the template for my own games, which you can find on my [itch.io](https://redpenguin777.itch.io)
+I used this as the template for my own games, which you can find on my [itch.io](https://renpenguin.itch.io)
